@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QUESTIONS</title>
+</head>
+<body>
+{% if latest_question_list %}
+<ul>
+    {% for question in latest_question_list %}
+
+    <!-- Para usar el app_name y especificarle de cual url viene "polls:*nombre de la url*" -->
+    <!-- Ejemplo de url pasando un id -->
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+</body>
+</html>
