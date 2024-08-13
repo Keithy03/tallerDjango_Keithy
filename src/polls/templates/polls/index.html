@@ -1,17 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>QUESTIONS</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
 </head>
-<body>
+<body id="bodyIndex">
 {% if latest_question_list %}
-<ul>
+<ul id="listPoints">
     {% for question in latest_question_list %}
 
-    <!-- Para usar el app_name y especificarle de cual url viene "polls:*nombre de la url*" -->
+    <!-- Para usar el app_name y especificarle de cual url viene "polls:nombre de la url" -->
     <!-- Ejemplo de url pasando un id -->
-    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    <li><a id="list" href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
 </ul>
 {% else %}
