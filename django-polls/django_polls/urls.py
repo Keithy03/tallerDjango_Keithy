@@ -1,6 +1,6 @@
 from django.urls import path
 from debug_toolbar.toolbar import debug_toolbar_urls
-from . import views
+from django_polls import views
 
 # Se usa para poder diferenciar los nombres de las urls, se recomienda con proyectos muy grandes.
 app_name = "polls"
